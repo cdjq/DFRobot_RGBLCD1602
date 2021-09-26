@@ -34,7 +34,7 @@ python3: pip3 install wiringpi
 
 ## Methods
 
-```C++
+```python
   '''
     @brief write character
     @param data 写入的数据
