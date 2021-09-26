@@ -28,7 +28,7 @@ DFRobot Gravity I2C LCD1602彩色背光液晶屏可以显示2x16个字符，支�
 ## Installation
 
 使用此库前，请首先下载库文件，将其粘贴到树莓派的自定义目录中，然后打开examples文件夹并在该文件夹中运行演示。
-本库使用到了wiringpi，使用本库前先检车树莓派是否导入了wiringpi，若没有导入先请导入
+本库使用到了wiringpi，使用本库前先检查树莓派是否导入了wiringpi，若没有导入先请导入
 python2: pip install wiringpi
 python3: pip3 install wiringpi
 
