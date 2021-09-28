@@ -20,16 +20,16 @@ lcd=DFRobot_RGBLCD1602(col= 16,row = 2)                               #create LC
 while True:
 
   '''
-    @brief 设置光标位置
-    @param col 列数 可选范围 0-15
-    @param row 行数 可选范围 0-1，0代表了第一行，1代表了第二行
+    @brief set cursor position
+    @param col columns optional range 0-15
+    @param row rows optional range 0-1，0 is the first row, 1 is the second row
   '''
   lcd.set_cursor(0, 0)
   #print from 0 to 9:
   for thisChar in range(0,10):
     '''
-      @brief 向液晶屏输出显示
-      @param arg 输出的数据
+      @brief output data to LCD to display
+      @param arg output data
     '''
     lcd.print_out(thisChar)
     time.sleep(0.5)
@@ -53,6 +53,6 @@ while True:
   lcd.no_autoscroll()
 
   '''
-    @brief 清除显示并将光标回到初始位置（0位置）
+    @brief clear the display and return the cursor to the initial position (position 0)
   '''
   lcd.clear()
