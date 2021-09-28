@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 '''file button.py
- # @brief 本实例实现了按键状态显示，被按下的按键将会在LCD中显示
+ # @brief this sample makes it come true to display the key status, the pressed key will be displayed in the LCD
  # @copyright	Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
  # @licence     The MIT License (MIT)
  # @maintainer [yangfeng](feng.yang@dfrobot.com)
@@ -53,14 +53,14 @@ def read_LCD_buttons():
     return btnRIGHT
 
 '''
-  @brief 设置光标位置
-  @param col 列数 可选范围 0-15
-  @param row 行数 可选范围 0-1，0代表了第一行，1代表了第二行
+  @brief set cursor position
+  @param col columns optional range 0-15
+  @param row rows optional range 0-1，0 is the first row, 1 is the second row
 '''
 lcd.set_cursor(0,0)
 '''
-  @brief 向液晶屏输出显示
-  @param arg 输出的数据
+  @brief output data to LCD to display
+  @param arg output data
 '''
 lcd.print_out("Push the buttons")
 while True:
