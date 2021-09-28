@@ -43,7 +43,7 @@ To use this library, first download the library file, paste it into the \Arduino
   void clear();
 
   /**
-   *  @brief return the cursor to the initial position（0,0）
+   *  @brief return the cursor to the initial position (0,0)
    */
   void home();
 
