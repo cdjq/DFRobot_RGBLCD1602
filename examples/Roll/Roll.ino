@@ -14,7 +14,7 @@ DFRobot_RGBLCD1602 lcd(/*lcdCols*/16,/*lcdRows*/2);  //16 characters and 2 lines
 
 void setup() {
     /**
-     *  @brief 液晶屏以及主控IIC的初始化
+     *  @brief initialize the LCD and master IIC
      */ 
     lcd.init();
     // Print a message to the LCD.
@@ -27,7 +27,7 @@ void loop() {
     // to move it offscreen left:
     for (int positionCounter = 0; positionCounter < 13; positionCounter++) {
         /**
-         *  @brief 向左滚动显示
+         *  @brief scroll left to display
          */
         lcd.scrollDisplayLeft();//scroll one position left
         // wait a bit:
@@ -38,7 +38,7 @@ void loop() {
     // to move it offscreen right:
     for (int positionCounter = 0; positionCounter < 29; positionCounter++) {
         /**
-         *  @brief 向右滚动显示
+         *  @brief scroll right to display
          */
         lcd.scrollDisplayRight();//scroll one position right
         // wait a bit:
