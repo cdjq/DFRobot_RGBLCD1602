@@ -117,7 +117,7 @@ To use this library, first download the library file, paste it into the \Arduino
   /**
    *  @brief set cursor position
    *  @param col columns optional range 0-15
-   *  @param row rows optional range 0-1，0 is the first row，1 is the second row
+   *  @param row rows optional range 0-1，0 is the first row, 1 is the second row
    */
   void setCursor(uint8_t col, uint8_t row);
   
