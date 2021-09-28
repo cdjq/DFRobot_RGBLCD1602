@@ -32,8 +32,8 @@ def breath(color):
 
 lcd=DFRobot_RGBLCD1602(16,2)                               #create LCD object,specify col and row
 '''
-  @brief 向液晶屏输出显示
-  @param arg 输出的数据
+  @brief output data to LCD to display
+  @param arg output data
 '''
 lcd.print_out("fade demo")
 
