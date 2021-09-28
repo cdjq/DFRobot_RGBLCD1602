@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 ''' file DFRobot_RGBLCD1602.cpp
-  # DFRobot_RGBLCD1602 类的基础结构，基础方法的实现
+  # DFRobot_RGBLCD1602 class infrastructure, the implementation of basic methods
   @copyright	Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
   @licence     The MIT License (MIT)
   @maintainer [yangfeng](feng.yang@dfrobot.com)
@@ -80,7 +80,7 @@ class DFRobot_RGBLCD1602:
 
   '''
     @brief write character
-    @param data 写入的数据
+    @param data the written data
   '''
   def write(self,data):
     b=bytearray(2)
@@ -89,10 +89,10 @@ class DFRobot_RGBLCD1602:
     wiringpi.wiringPiI2CWriteReg8(self.LCD,0x40,data)
 
   '''
-    @brief 设置RGB
-    @param r  red   范围(0-255)
-    @param g  green 范围(0-255)
-    @param b  blue  范围(0-255)
+    @brief set RGB
+    @param r  red   range(0-255)
+    @param g  green range(0-255)
+    @param b  blue  range(0-255)
   '''
   def set_RGB(self,r,g,b):
     self._set_reg(REG_RED,r)
@@ -100,9 +100,9 @@ class DFRobot_RGBLCD1602:
     self._set_reg(REG_BLUE,b)
 
   '''
-    @brief 设置光标位置
-    @param col 列数 可选范围 0-15
-    @param row 行数 可选范围 0-1，0代表了第一行，1代表了第二行
+    @brief set cursor position
+    @param col columns optional range 0-15
+    @param row rows optional range 0-1，0 is the first row, 1 is the second row
   '''
   def set_cursor(self,col,row):
     if(row == 0):
@@ -112,26 +112,26 @@ class DFRobot_RGBLCD1602:
     self._command(col)
 
   '''
-    @brief 清除显示并将光标回到初始位置（0位置）
+    @brief clear the display and return the cursor to the initial position (position 0)
   '''
   def clear(self):
     self._command(LCD_CLEARDISPLAY)
     time.sleep(0.002)
 
   '''
-    @brief 向左滚动显示
+    @brief scroll left to display
   '''
   def scroll_display_left(self):
     self._command(LCD_CURSORSHIFT | LCD_DISPLAYMOVE | LCD_MOVELEFT)
   '''
-    @brief 向右滚动显示
+    @brief scroll right to display
   '''
   def scroll_display_right(self):
     self._command(LCD_CURSORSHIFT | LCD_DISPLAYMOVE | LCD_MOVERIGHT)
 
   '''
-    @brief 向液晶屏输出显示
-    @param arg 输出的数据
+    @brief output data to LCD to display
+    @param arg output data
   '''
   def print_out(self,arg):
     if(isinstance(arg,int)):
@@ -141,7 +141,7 @@ class DFRobot_RGBLCD1602:
       self.write(x)
 
   '''
-    @brief 将光标回到初始位置（0,0）
+    @brief return the cursor to the initial position（0,0）
   '''
   def home(self):
     self._command(LCD_RETURNHOME)        # set cursor position to zero
@@ -219,8 +219,8 @@ class DFRobot_RGBLCD1602:
 
   '''
     @brief Allows us to fill the first 8 C
-    @param location 代替字符 范围（0-7）
-    @param charmap  字符列表 大小8个字节
+    @param location substitute character range（0-7）
+    @param charmap  character listing the size is 8 bytes
   '''
   def customSymbol(self,location, charmap):
     location &= 0x7  # we only have 8 locations 0-7
@@ -238,15 +238,15 @@ class DFRobot_RGBLCD1602:
     self._set_reg(0x06, 0x7f)  # half on, half off
 
   '''
-    @brief 不闪烁背光
+    @brief not blink the LED backlight
   '''
   def no_blink_LED(self):
     self._set_reg(0x07, 0x00)
     self._set_reg(0x06, 0xff)
 
   '''
-    @brief 设置背光
-    @param mode  true代表开启背光并设置为白色，false代表关闭背光
+    @brief set the backlight
+    @param mode  true indicates the backlight is turned on and set to white, false indicates the backlight is turned off
   '''
   def setBacklight(self,mode):
     if(mode):
@@ -255,7 +255,7 @@ class DFRobot_RGBLCD1602:
       self.close_backlight()        # turn backlight off
 
   '''
-    @brief 输出字符串
+    @brief output string
   '''
   def printstr(self,c):
     #/< This function is not identical to the function used for "real" I2C displays
@@ -263,30 +263,30 @@ class DFRobot_RGBLCD1602:
     self.print_out(c)
  
   '''
-     @brief 设置背光PWM输出
-     @param color  背光颜色  参数选择：REG_RED\REG_GREEN\REG_BLUE
-     @param pwm  颜色强度值   范围(0-255)
+     @brief set backlight PWM output
+     @param color  backlight color  Preferences：REG_RED\REG_GREEN\REG_BLUE
+     @param pwm  color intensity   range(0-255)
   '''
   def set_pwm(self,color,pwm):
     self._set_reg(color, pwm)
 
   '''
-     @brief 设置背光为白色
+     @brief set the backlight to white
   '''
   def set_color_white(self):
     self.set_RGB(255, 255, 255)
 
   '''
-    @brief 关闭背光
+    @brief close the backlight
   '''
   def close_backlight(self):
     self.set_RGB(0, 0, 0)
 
   '''
-    @brief 初始化函数
-    @param cols 列数 可选范围 0-15
-    @param lines 行数 可选范围 0-1，0代表了第一行，1代表了第二行
-    @param dotsize  字符尺寸 LCD_5x8DOTS\LCD_5x10DOTS
+    @brief the initialization function
+    @param cols columns optional range 0-15
+    @param lines rows optional range 0-1，0 is the first row, 1 is the second row
+    @param dotsize  character size LCD_5x8DOTS\LCD_5x10DOTS
   '''
   def _begin(self,cols,lines,dotsize=LCD_5x8DOTS):
     if (lines > 1):
@@ -340,7 +340,7 @@ class DFRobot_RGBLCD1602:
 
   '''
     @brief send command
-    @param data 发送的命令
+    @param data the sent data
   '''
   def _command(self,cmd):
     b=bytearray(2)
@@ -349,9 +349,9 @@ class DFRobot_RGBLCD1602:
     wiringpi.wiringPiI2CWriteReg8(self.LCD,0x80,cmd)
 
   '''
-    @brief 设置寄存器
-    @param addr 寄存器地址
-    @param data 数据
+    @brief set the register
+    @param addr register address
+    @param data data
   '''
   def _set_reg(self,reg,data):
     b=bytearray(1)
