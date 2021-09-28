@@ -17,8 +17,8 @@ lcd=DFRobot_RGBLCD1602(16,2)                               #create LCD object,sp
 
 # Print a message to the LCD.
 '''
-  @brief 向液晶屏输出显示
-  @param arg 输出的数据
+  @brief output data to LCD to display
+  @param arg output data
 '''
 lcd.print_out("hello, world!")
 time.sleep(1)
@@ -30,7 +30,7 @@ while True:
   for positionCounter in range (0,13):
     # scroll one position left:
     '''
-      @brief 向左滚动显示
+      @brief scroll left to display
     '''
     lcd.scroll_display_left()
     # wait a bit:
@@ -41,7 +41,7 @@ while True:
   for positionCounter in range (0,29):
     # scroll one position right:
     '''
-      @brief 向右滚动显示
+      @brief scroll right to display
     '''
     lcd.scroll_display_right()
     # wait a bit:
