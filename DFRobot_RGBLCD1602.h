@@ -1,6 +1,6 @@
 /*!
  * @file DFRobot_RGBLCD1602.h
- * @brief DFRobot_RGBLCD1602 类的基础结构
+ * @brief DFRobot_RGBLCD1602 class infrastructure
  * @copyright	Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
  * @licence     The MIT License (MIT)
  * @maintainer [yangfeng](feng.yang@dfrobot.com)
@@ -99,17 +99,17 @@ public:
   DFRobot_RGBLCD1602(uint8_t lcdCols,uint8_t lcdRows,TwoWire *pWire=&Wire,uint8_t lcdAddr=LCD_ADDRESS,uint8_t RGBAddr=RGB_ADDRESS);
 
   /**
-   *  @brief 液晶屏以及主控IIC的初始化
+   *  @brief initialize the LCD and master IIC
    */ 
   void init();
 
   /**
-   *  @brief 清除显示并将光标回到初始位置（0位置）
+   *  @brief clear the display and return the cursor to the initial position (position 0)
    */
   void clear();
 
   /**
-   *  @brief 将光标回到初始位置（0,0）
+   *  @brief return the cursor to the initial position (0,0)
    */
   void home();
 
@@ -144,12 +144,12 @@ public:
   void cursor();
 
   /**
-   *  @brief 向左滚动显示
+   *  @brief scroll left to display
    */
   void scrollDisplayLeft();
 
   /**
-   *  @brief 向右滚动显示
+   *  @brief scroll right to display
    */
   void scrollDisplayRight();
  
@@ -175,46 +175,46 @@ public:
    
   /**
    *  @brief Allows us to fill the first 8 CGRAM locations with custom characters
-   *  @param location 代替字符 范围（0-7）
-   *  @param charmap  字符数组 大小8个字节
+   *  @param location substitute character range (0-7)
+   *  @param charmap  character array the size is 8 bytes
    */
   void customSymbol(uint8_t location, uint8_t charmap[]);
 
   /**
-   *  @brief 设置光标位置
-   *  @param col 列数 可选范围 0-15
-   *  @param row 行数 可选范围 0-1，0代表了第一行，1代表了第二行
+   *  @brief set cursor position
+   *  @param col columns optional range 0-15
+   *  @param row rows optional range 0-1，0 is the first row, 1 is the second row
    */
   void setCursor(uint8_t col, uint8_t row);
   
   /**
-   *  @brief 设置RGB
-   *  @param r  red   范围(0-255)
-   *  @param g  green 范围(0-255)
-   *  @param b  blue  范围(0-255)
+   *  @brief set RGB
+   *  @param r  red   range(0-255)
+   *  @param g  green range(0-255)
+   *  @param b  blue  range(0-255)
    */
   void setRGB(uint8_t r, uint8_t g, uint8_t b);
 
   /**
-   *  @brief 设置背光PWM输出
-   *  @param color  背光颜色  参数选择：REG_RED\REG_GREEN\REG_BLUE
-   *  @param pwm  颜色强度值   范围(0-255)
+   *  @brief set backlight PWM output
+   *  @param color  backlight color  Preferences：REG_RED\REG_GREEN\REG_BLUE
+   *  @param pwm  color intensity   range(0-255)
    */
   void setPWM(uint8_t color, uint8_t pwm){setReg(color, pwm);}      // set pwm
 
   /**
-   *  @brief 背光颜色
-   *  @param color  背光颜色  参数选择： WHITE\RED\GREEN\BLUE
+   *  @brief backlight color
+   *  @param color  backlight color  Preferences： WHITE\RED\GREEN\BLUE
    */
   void setColor(uint8_t color);
 
   /**
-   *  @brief 关闭背光
+   *  @brief close the backlight
    */
   void closeBacklight(){setRGB(0, 0, 0);}
 
   /**
-   *  @brief 设置背光为白色
+   *  @brief set the backlight to white
    */
   void setColorWhite(){setRGB(255,255 , 255);}
 
@@ -224,25 +224,25 @@ public:
   void blinkLED(void);
 
   /**
-   *  @brief 不闪烁背光
+   *  @brief the LED backlight doesn't blink
    */
   void noBlinkLED(void);
 
   /**
    *  @brief write character
-   *  @param data 写入的数据
+   *  @param data the written data
    */
   virtual size_t write(uint8_t data);
 
   /**
    *  @brief send command
-   *  @param data 发送的命令
+   *  @param data the sent command
    */
   void command(uint8_t data);
 
   /**
-   *  @brief 设置背光
-   *  @param mode  true代表开启背光并设置为白色，false代表关闭背光
+   *  @brief set the backlight
+   *  @param mode  true indicates the backlight is turned on and set to white, false indicates the backlight is turned off
    */
   void setBacklight(bool mode);
 
@@ -250,24 +250,24 @@ public:
   
 private:
   /**
-   *  @brief 初始化函数
-   *  @param col 列数 可选范围 0-15
-   *  @param row 行数 可选范围 0-1，0代表了第一行，1代表了第二行
-   *  @param charSize  字符尺寸 LCD_5x8DOTS\LCD_5x10DOTS
+   *  @brief the initialization function
+   *  @param col columns optional range 0-15
+   *  @param row rows optional range 0-1，0 is the first row, 1 is the second row
+   *  @param charSize  character size LCD_5x8DOTS\LCD_5x10DOTS
    */
   void begin(uint8_t cols, uint8_t rows, uint8_t charSize = LCD_5x8DOTS);
 
   /**
-   *  @brief 设置光标
-   *  @param data 要发送的数据
-   *  @param len 数据长度
+   *  @brief set cursor
+   *  @param data the data to send
+   *  @param len length of the data
    */
   void send(uint8_t *data, uint8_t len);
 
   /**
-   *  @brief 设置寄存器
-   *  @param addr 寄存器地址
-   *  @param data 数据
+   *  @brief set the register
+   *  @param addr register address
+   *  @param data data
    */
   void setReg(uint8_t addr, uint8_t data);
   uint8_t _showFunction;
