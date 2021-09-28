@@ -1,6 +1,6 @@
 /*!
  * @file DFRobot_RGBLCD1602.cpp
- * @brief DFRobot_RGBLCD1602 类的基础结构，基础方法的实现
+ * @brief DFRobot_RGBLCD1602 class infrastructure, the implementation of basic methods
  * @copyright	Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
  * @licence     The MIT License (MIT)
  * @maintainer [yangfeng](feng.yang@dfrobot.com)
