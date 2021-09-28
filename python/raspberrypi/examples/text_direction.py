@@ -41,7 +41,7 @@ while True:
   # reset at 'z':
   if ((thisChar) > 'z'):
     '''
-      @brief 将光标回到初始位置（0,0）
+      @brief return the cursor to the initial position（0,0）
     '''
     lcd.home()
     # start again at 0
@@ -49,7 +49,7 @@ while True:
 
   '''
     @brief write character
-    @param data 写入的数据
+    @param data the written data
   '''
   lcd.write(ord(thisChar))
   # wait a second:
