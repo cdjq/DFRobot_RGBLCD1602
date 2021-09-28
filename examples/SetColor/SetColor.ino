@@ -18,7 +18,7 @@ DFRobot_RGBLCD1602 lcd(/*lcdCols*/16,/*lcdRows*/2);  //16 characters and 2 lines
 void setup() {
 	Serial.begin(115200);
     /**
-     *  @brief 液晶屏以及主控IIC的初始化
+     *  @brief initialize the LCD and master IIC
      */ 
     lcd.init();
     // Print a message to the LCD.
@@ -33,10 +33,10 @@ void loop() {
         
         dtaLen = 0;
         /**
-         *  @brief 设置RGB
-         *  @param r  red   范围(0-255)
-         *  @param g  green 范围(0-255)
-         *  @param b  blue  范围(0-255)
+         *  @brief set RGB
+         *  @param r  red   range(0-255)
+         *  @param g  green range(0-255)
+         *  @param b  blue  range(0-255)
          */
         lcd.setRGB(r, g, b);
 
