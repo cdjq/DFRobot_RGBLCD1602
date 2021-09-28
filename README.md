@@ -2,7 +2,7 @@
 
 - [中文版](./README_CN.md)
 
-见惯了千篇一律的LCD液晶屏，你是否也想来一次不一样的体验？DFRobot彩光LCD将给您带来全新的视觉感受，摆脱沉闷的单色背光，换上RGB全彩背光，能够提供1600万种颜色组合。 DFRobot Gravity I2C LCD1602彩色背光液晶屏采用通用Gravity i2C接口，仅需两根通信线，即可完成通信与背光控制。液晶屏可以显示2x16个字符，支持屏幕滚动，光标移动等功能。没有繁琐的接线，没有复杂的代码，通过专门的Arduino库，就可以完成所有的设计。
+Have you been fed up with Black/White LCD screen? Do you want to try a colorful one? DFRobot I2C 16x2 Arduino LCD with RGB Backlight Display module will bring you a new experience about screen. It comes with RGB full color backlight, which has 16 million kinds of color. This I2C 16x2 LCD Screen is using an Gravity I2C communication interface. It means it only needs 2 communication lines for the communication and backlight control. The LCD can display 2x16 characters and support scrolling-displaying and cursor movement. Without tedious wiring and complicated codes, you can just utilize the specific Arduino library to accomplish all the design.
 
 
 ![](./resources/images/DFR0464.jpg)
@@ -23,27 +23,27 @@
 
 ## Summary
 
-DFRobot Gravity I2C LCD1602彩色背光液晶屏可以显示2x16个字符，支持屏幕滚动，光标移动，背光颜色调节等功能
+DFRobot Gravity I2C LCD1602 with RGB Backlight Display can display 2x16 characters and support functions like scrolling-displaying, cursor movement and backlight color adjustment
 
 ## Installation
 
-使用此库前，请首先下载库文件，将其粘贴到\Arduino\libraries目录中，然后打开examples文件夹并在该文件夹中运行演示。
+To use this library, first download the library file, paste it into the \Arduino\ Libraries directory, then open the examples folder and run the demo in that folder
 
 ## Methods
 
 ```C++
   /**
-   *  @brief 液晶屏以及主控IIC的初始化
+   *  @brief initialize the LCD and master IIC
    */ 
   void init();
 
   /**
-   *  @brief 清除显示并将光标回到初始位置（0位置）
+   *  @brief clear the display and return the cursor to the initial position (position 0)
    */
   void clear();
 
   /**
-   *  @brief 将光标回到初始位置（0,0）
+   *  @brief return the cursor to the initial position（0,0）
    */
   void home();
 
@@ -78,12 +78,12 @@ DFRobot Gravity I2C LCD1602彩色背光液晶屏可以显示2x16个字符，支�
   void cursor();
 
   /**
-   *  @brief 向左滚动显示
+   *  @brief scroll left to display
    */
   void scrollDisplayLeft();
 
   /**
-   *  @brief 向右滚动显示
+   *  @brief scroll right to display
    */
   void scrollDisplayRight();
  
@@ -109,46 +109,46 @@ DFRobot Gravity I2C LCD1602彩色背光液晶屏可以显示2x16个字符，支�
    
   /**
    *  @brief Allows us to fill the first 8 CGRAM locations with custom characters
-   *  @param location 代替字符 范围（0-7）
-   *  @param charmap  字符数组 大小8个字节
+   *  @param location substitute character range（0-7）
+   *  @param charmap  character array the size is 8 bytes
    */
   void customSymbol(uint8_t location, uint8_t charmap[]);
 
   /**
-   *  @brief 设置光标位置
-   *  @param col 列数 可选范围 0-15
-   *  @param row 行数 可选范围 0-1，0代表了第一行，1代表了第二行
+   *  @brief set cursor position
+   *  @param col columns optional range 0-15
+   *  @param row rows optional range 0-1，0 is the first row，1 is the second row
    */
   void setCursor(uint8_t col, uint8_t row);
   
   /**
-   *  @brief 设置RGB
-   *  @param r  red   范围(0-255)
-   *  @param g  green 范围(0-255)
-   *  @param b  blue  范围(0-255)
+   *  @brief set RGB
+   *  @param r  red   range(0-255)
+   *  @param g  green range(0-255)
+   *  @param b  blue  range(0-255)
    */
   void setRGB(uint8_t r, uint8_t g, uint8_t b);
 
   /**
-   *  @brief 设置背光PWM输出
-   *  @param color  背光颜色  参数选择：REG_RED\REG_GREEN\REG_BLUE
-   *  @param pwm  颜色强度值   范围(0-255)
+   *  @brief set backlight PWM output
+   *  @param color  backlight color  Preferences：REG_RED\REG_GREEN\REG_BLUE
+   *  @param pwm  color intensity   range(0-255)
    */
   void setPWM(uint8_t color, uint8_t pwm);
 
   /**
-   *  @brief 背光颜色
-   *  @param color  背光颜色  参数选择： WHITE\RED\GREEN\BLUE
+   *  @brief backlight color
+   *  @param color  backlight color  Preferences： WHITE\RED\GREEN\BLUE
    */
   void setColor(uint8_t color);
 
   /**
-   *  @brief 关闭背光
+   *  @brief close backlight
    */
   void closeBacklight();
 
   /**
-   *  @brief 设置背光为白色
+   *  @brief set color to white
    */
   void setColorWhite();
 
@@ -158,25 +158,25 @@ DFRobot Gravity I2C LCD1602彩色背光液晶屏可以显示2x16个字符，支�
   void blinkLED(void);
 
   /**
-   *  @brief 不闪烁背光
+   *  @brief not blink the LED backlight
    */
   void noBlinkLED(void);
 
   /**
    *  @brief write character
-   *  @param data 写入的数据
+   *  @param data the written data
    */
   virtual size_t write(uint8_t data);
 
   /**
    *  @brief send command
-   *  @param data 发送的命令
+   *  @param data the sent command 
    */
   void command(uint8_t data);
 
   /**
-   *  @brief 设置背光
-   *  @param mode  true代表开启背光并设置为白色，false代表关闭背光
+   *  @brief set backlight
+   *  @param mode  true indicates the backlight is turned on and set to white，false indicates the backlight is turned off
    */
   void setBacklight(bool mode);
 ```
