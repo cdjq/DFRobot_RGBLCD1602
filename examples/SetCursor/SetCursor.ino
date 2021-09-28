@@ -17,7 +17,7 @@ DFRobot_RGBLCD1602 lcd(/*lcdCols*/16,/*lcdRows*/2);  //16 characters and 2 lines
 
 void setup() {
     /**
-     *  @brief 液晶屏以及主控IIC的初始化
+     *  @brief initialize the LCD and master IIC
      */ 
     lcd.init();
 }
@@ -30,9 +30,9 @@ void loop() {
             // loop over the rows:
             for (int thisRow = 0; thisRow < numCols; thisRow++) {
                 /**
-                 *  @brief 设置光标位置
-                 *  @param col 列数 可选范围 0-15
-                 *  @param row 行数 可选范围 0-1，0代表了第一行，1代表了第二行
+                 *  @brief set cursor position
+                 *  @param col columns optional range 0-15
+                 *  @param row rows optional range 0-1，0 is the first row, 1 is the sencond row
                  */
                 lcd.setCursor(thisRow,thisCol);// set the cursor position
                 // print the letter:
