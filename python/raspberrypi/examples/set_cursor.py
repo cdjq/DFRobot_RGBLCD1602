@@ -18,10 +18,10 @@ lcd=DFRobot_RGBLCD1602(16,2)                               #create LCD object,sp
 numRows = 2
 numCols = 16
 '''
-  @brief 设置RGB
-  @param r  red   范围(0-255)
-  @param g  green 范围(0-255)
-  @param b  blue  范围(0-255)
+  @brief set RGB
+  @param r  red   range(0-255)
+  @param g  green range(0-255)
+  @param b  blue  range(0-255)
   
 '''
 lcd.set_RGB(0,100,0)
@@ -35,15 +35,15 @@ while True:
       for thisCol in range(0,numCols):
         # set the cursor position:
         '''
-          @brief 设置光标位置
-          @param col 列数 可选范围 0-15
-          @param row 行数 可选范围 0-1，0代表了第一行，1代表了第二行
+          @brief set cursor position
+          @param col columns optional range 0-15
+          @param row rows optional range 0-1，0 is the first row, 1 is the second row
         '''
         lcd.set_cursor(thisCol,thisRow)
         # print the letter:
         '''
           @brief write character
-          @param data 写入的数据
+          @param data the written data
         '''
         lcd.write(thisLetter)
         time.sleep(0.2)
