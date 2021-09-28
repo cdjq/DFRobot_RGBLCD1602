@@ -16,7 +16,7 @@ DFRobot_RGBLCD1602 lcd(/*lcdCols*/16,/*lcdRows*/2);  //16 characters and 2 lines
 
 void setup() {
     /**
-     *  @brief 液晶屏以及主控IIC的初始化
+     *  @brief initialize the LCD and master IIC
      */ 
     lcd.init();
     /**
@@ -43,7 +43,7 @@ void loop() {
     // reset at 'z':
     if (thisChar > 'z') {
         /**
-         *  @brief 将光标回到初始位置（0,0）
+         *  @brief return the cursor to the initial position（0,0）
          */
         lcd.home();
         // start again at 0
