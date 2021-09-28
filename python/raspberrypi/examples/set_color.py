@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 '''file set_color.py
- # @brief  设置背光颜色
+ # @brief  set backlight color
  # @copyright	Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
  # @licence     The MIT License (MIT)
  # @maintainer [yangfeng](feng.yang@dfrobot.com)
@@ -17,8 +17,8 @@ lcd=DFRobot_RGBLCD1602(16,2)                               #create LCD object,sp
 
 # Print a message to the LCD.
 '''
-  @brief 向液晶屏输出显示
-  @param arg 输出的数据
+  @brief output data to LCD to display
+  @param arg output data
 '''
 lcd.print_out("set color")
 print("set color")
@@ -42,10 +42,10 @@ while True:
     else:
       print("b is wrong number,input b in 0 ~255")
   '''
-    @brief 设置RGB
-    @param r  red   范围(0-255)
-    @param g  green 范围(0-255)
-    @param b  blue  范围(0-255)
+    @brief set RGB
+    @param r  red   range(0-255)
+    @param g  green range(0-255)
+    @param b  blue  range(0-255)
   '''
   lcd.set_RGB(r, g, b)
   print("get data:r = %s,g = %s,b = %s" %(r,g,b))
