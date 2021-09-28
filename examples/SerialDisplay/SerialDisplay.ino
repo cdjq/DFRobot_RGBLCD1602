@@ -14,7 +14,7 @@ DFRobot_RGBLCD1602 lcd(/*lcdCols*/16,/*lcdRows*/2);  //16 characters and 2 lines
 
 void setup() {
     /**
-     *  @brief 液晶屏以及主控IIC的初始化
+     *  @brief initialize the LCD and master IIC
      */ 
     lcd.init();
     // initialize the serial communications:
@@ -27,7 +27,7 @@ void loop() {
         // wait a bit for the entire message to arrive
         delay(100);
        /**
-        *  @brief 清除显示并将光标回到初始位置（0位置）
+        *  @brief clear the display and return the cursor to the initial position (position 0)
         */
         lcd.clear();
         // read all the available characters
