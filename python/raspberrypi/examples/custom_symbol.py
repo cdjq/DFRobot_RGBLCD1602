@@ -77,8 +77,8 @@ lcd=DFRobot_RGBLCD1602(col= 16,row = 2)                               #create LC
 # create a new character
 '''
   @brief Allows us to fill the first 8 C
-  @param location 代替字符 范围（0-7）
-  @param charmap  字符列表 大小8个字节
+  @param location substitute character range（0-7）
+  @param charmap  character listing the size is 8 bytes
 '''
 lcd.customSymbol(0, heart)
 lcd.customSymbol(1, smiley)
@@ -88,15 +88,15 @@ lcd.customSymbol(4, armsUp)
 #set up the lcd's number of columns and rows:
 
 '''
-  @brief 设置光标位置
-  @param col 列数 可选范围 0-15
-  @param row 行数 可选范围 0-1，0代表了第一行，1代表了第二行
+  @brief set cursor position
+  @param col columns optional range 0-15
+  @param row rows optional range 0-1，0 is the first row, 1 is the second row
 '''
 lcd.set_cursor(0, 0)
 
 '''
-  @brief 向液晶屏输出显示
-  @param arg 输出的数据
+  @brief output data to LCD to display
+  @param arg output data
 '''
 # Print a message to the lcd.
 lcd.print_out("I ")
