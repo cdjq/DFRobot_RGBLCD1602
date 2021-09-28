@@ -72,14 +72,14 @@ byte armsUp[8] = {
 
 void setup() {
     /**
-     *  @brief 液晶屏以及主控IIC的初始化
+     *  @brief initialize the LCD and master IIC
      */ 
     lcd.init();
  #if 1   // create a new character
   /**
    *  @brief Allows us to fill the first 8 CGRAM locations with custom characters
-   *  @param location 代替字符 范围（0-7）
-   *  @param charmap  字符数组 大小8个字节
+   *  @param location substitute character range（0-7）
+   *  @param charmap  character array the size is 8 bytes
    */
     lcd.customSymbol(0, heart);
     lcd.customSymbol(1, smiley);
@@ -90,9 +90,9 @@ void setup() {
     // set up the lcd's number of columns and rows:
     
     /**
-     *  @brief 设置光标位置
-     *  @param col 列数 可选范围 0-15
-     *  @param row 行数 可选范围 0-1，0代表了第一行，1代表了第二行
+     *  @brief set cursor position
+     *  @param col columns optional range 0-15
+     *  @param row rows optional range 0-1，0 is the first row，1 is the second row
      */
     lcd.setCursor(0, 0);
     // Print a message to the lcd.
