@@ -15,9 +15,9 @@ DFRobot_RGBLCD1602 lcd(/*lcdCols*/16,/*lcdRows*/2);  //16 characters and 2 lines
 void breath(unsigned char color){
     for(int i=0; i<255; i++){
         /**
-         *  @brief 设置背光PWM输出
-         *  @param color  背光颜色  参数选择：REG_RED\REG_GREEN\REG_BLUE
-         *  @param pwm  颜色强度值   范围(0-255)
+         *  @brief set backlight PWM output
+         *  @param color  backlight color  Preferences：REG_RED\REG_GREEN\REG_BLUE
+         *  @param pwm  color intensity   range(0-255)
          */
         lcd.setPWM(color, i);
         delay(5);
@@ -34,7 +34,7 @@ void breath(unsigned char color){
 
 void setup() {
     /**
-     *  @brief 液晶屏以及主控IIC的初始化
+     *  @brief initialize the LCD and master IIC
      */ 
     lcd.init();
     // Print a message to the LCD.
