@@ -2,7 +2,7 @@
 
 - [中文版](./README_CN.md)
 
-见惯了千篇一律的LCD液晶屏，你是否也想来一次不一样的体验？DFRobot彩光LCD将给您带来全新的视觉感受，摆脱沉闷的单色背光，换上RGB全彩背光，能够提供1600万种颜色组合。 DFRobot Gravity I2C LCD1602彩色背光液晶屏采用通用Gravity i2C接口，仅需两根通信线，即可完成通信与背光控制。液晶屏可以显示2x16个字符，支持屏幕滚动，光标移动等功能。没有繁琐的接线，没有复杂的代码，通过专门的Arduino库，就可以完成所有的设计。
+Have you been fed up with Black/White LCD screen? Do you want to try a colorful one? DFRobot I2C 16x2 Arduino LCD with RGB Backlight Display module will bring you a new experience about screen. It comes with RGB full color backlight, which has 16 million kinds of color. This I2C 16x2 LCD Screen is using an Gravity I2C communication interface. It means it only needs 2 communication lines for the communication and backlight control. The LCD can display 2x16 characters and support scrolling-displaying and cursor movement. Without tedious wiring and complicated codes, you can just utilize the specific Arduino library to accomplish all the design.
 
 
 ![](../../resources/images/DFR0464.jpg)
@@ -23,12 +23,12 @@
 
 ## Summary
 
-DFRobot Gravity I2C LCD1602彩色背光液晶屏可以显示2x16个字符，支持屏幕滚动，光标移动，背光颜色调节等功能
+DFRobot Gravity I2C LCD1602 with RGB Backlight Display can display 2x16 characters and support functions like scrolling-displaying, cursor movement and backlight color adjustment
 
 ## Installation
 
-使用此库前，请首先下载库文件，将其粘贴到树莓派的自定义目录中，然后打开examples文件夹并在该文件夹中运行演示。
-本库使用到了wiringpi，使用本库前先检查树莓派是否导入了wiringpi，若没有导入先请导入
+To use this library, please download the library file first, paste it into the custom directory of Raspberry Pi, then open the examples folder and run the demo in this folder
+This library needs to use wiringpi, so before using the library, check whether Raspberry Pi has imported wiringpi, if not, import it first
 python2: pip install wiringpi
 python3: pip3 install wiringpi
 
@@ -37,48 +37,48 @@ python3: pip3 install wiringpi
 ```python
   '''
     @brief write character
-    @param data 写入的数据
+    @param data the written data
   '''
   def write(self,data):
 
   '''
-    @brief 设置RGB
-    @param r  red   范围(0-255)
-    @param g  green 范围(0-255)
-    @param b  blue  范围(0-255)
+    @brief set RGB
+    @param r  red   range(0-255)
+    @param g  green range(0-255)
+    @param b  blue  range(0-255)
   '''
   def set_RGB(self,r,g,b):
 
   '''
-    @brief 设置光标位置
-    @param col 列数 可选范围 0-15
-    @param row 行数 可选范围 0-1，0代表了第一行，1代表了第二行
+    @brief set cursor position
+    @param col columns optional range 0-15
+    @param row rows optional range 0-1，0 is the first row, 1 is the second row
   '''
   def set_cursor(self,col,row):
 
   '''
-    @brief 清除显示并将光标回到初始位置（0位置）
+    @brief clear the display and return the cursor to the initial position (position 0)
   '''
   def clear(self):
 
   '''
-    @brief 向左滚动显示
+    @brief scroll left to display
   '''
   def scroll_display_left(self):
 
   '''
-    @brief 向右滚动显示
+    @brief scroll right to display
   '''
   def scroll_display_right(self):
 
   '''
-    @brief 向液晶屏输出显示
-    @param arg 输出的数据
+    @brief output data to LCD to display
+    @param arg output data
   '''
   def print_out(self,arg):
 
   '''
-    @brief 将光标回到初始位置（0,0）
+    @brief return the cursor to the initial position（0,0）
   '''
   def home(self):
 
@@ -134,8 +134,8 @@ python3: pip3 install wiringpi
 
   '''
     @brief Allows us to fill the first 8 C
-    @param location 代替字符 范围（0-7）
-    @param charmap  字符列表 大小8个字节
+    @param location substitute character range（0-7）
+    @param charmap  character listing the size is 8 bytes
   '''
   def customSymbol(self,location, charmap):
 
@@ -145,30 +145,30 @@ python3: pip3 install wiringpi
   def blink_LED(self):
 
   '''
-    @brief 不闪烁背光
+    @brief the LED backlight doesn't blink
   '''
   def no_blink_LED(self):
 
   '''
-    @brief 设置背光
-    @param mode  true代表开启背光并设置为白色，false代表关闭背光
+    @brief set the backlight
+    @param mode  true indicates the backlight is turned on and set to white, false indicates the backlight is turned off
   '''
   def setBacklight(self,mode):
 
   '''
-     @brief 设置背光PWM输出
-     @param color  背光颜色  参数选择：REG_RED\REG_GREEN\REG_BLUE
-     @param pwm  颜色强度值   范围(0-255)
+     @brief set backlight PWM output
+     @param color  backlight color  Preferences：REG_RED\REG_GREEN\REG_BLUE
+     @param pwm  color intensity   range(0-255)
   '''
   def set_pwm(self,color,pwm):
 
   '''
-     @brief 设置背光为白色
+     @brief set the backlight to white
   '''
   def set_color_white(self):
 
   '''
-    @brief 关闭背光
+    @brief close the backlight
   '''
   def close_backlight(self):
 ```
