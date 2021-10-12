@@ -30,7 +30,7 @@ while True:
   for positionCounter in range (0,13):
     # scroll one position left:
     '''
-      @brief scroll left to display
+      @brief scroll to left to display
     '''
     lcd.scroll_display_left()
     # wait a bit:
@@ -41,7 +41,7 @@ while True:
   for positionCounter in range (0,29):
     # scroll one position right:
     '''
-      @brief scroll right to display
+      @brief scroll to right to display
     '''
     lcd.scroll_display_right()
     # wait a bit:
