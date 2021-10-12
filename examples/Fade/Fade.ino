@@ -34,7 +34,7 @@ void breath(unsigned char color){
 
 void setup() {
     /**
-     *  @brief initialize the LCD and master IIC
+     *  @brief initialize the LCD and maincontroller IIC
      */ 
     lcd.init();
     // Print a message to the LCD.
