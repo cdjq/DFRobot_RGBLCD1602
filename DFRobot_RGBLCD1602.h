@@ -144,12 +144,12 @@ public:
   void cursor();
 
   /**
-   *  @brief scroll left to display
+   *  @brief scroll to left to display
    */
   void scrollDisplayLeft();
 
   /**
-   *  @brief scroll right to display
+   *  @brief scroll to right to display
    */
   void scrollDisplayRight();
  
