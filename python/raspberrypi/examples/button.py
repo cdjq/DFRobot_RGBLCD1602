@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 '''file button.py
- # @brief this sample provides the function of displaying the key status, the pressed key will be displayed in the LCD
+ # @brief This sample provides the function of displaying the key status, the pressed key will be displayed in the LCD
  # @copyright	Copyright (c) 2010 DFRobot Co.Ltd (http://www.dfrobot.com)
  # @licence     The MIT License (MIT)
  # @maintainer [yangfeng](feng.yang@dfrobot.com)
