@@ -72,7 +72,7 @@ byte armsUp[8] = {
 
 void setup() {
     /**
-     *  @brief initialize the LCD and master IIC
+     *  @brief initialize the LCD and maincontroller IIC
      */ 
     lcd.init();
  #if 1   // create a new character
