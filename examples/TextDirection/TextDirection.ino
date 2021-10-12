@@ -16,7 +16,7 @@ DFRobot_RGBLCD1602 lcd(/*lcdCols*/16,/*lcdRows*/2);  //16 characters and 2 lines
 
 void setup() {
     /**
-     *  @brief initialize the LCD and master IIC
+     *  @brief initialize the LCD and maincontroller IIC
      */ 
     lcd.init();
     /**
