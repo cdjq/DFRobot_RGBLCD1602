@@ -62,12 +62,12 @@ python3: pip3 install wiringpi
   def clear(self):
 
   '''
-    @brief scroll left to display
+    @brief scroll to left to display
   '''
   def scroll_display_left(self):
 
   '''
-    @brief scroll right to display
+    @brief scroll to right to display
   '''
   def scroll_display_right(self):
 
@@ -98,7 +98,7 @@ python3: pip3 install wiringpi
   def stop_blink(self):
 
   '''
-    @brief Turn on  the blinking showCursor
+    @brief Turn on the blinking showCursor
   '''
   def blink(self):
 
